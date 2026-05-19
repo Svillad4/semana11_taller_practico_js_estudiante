@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 11 - Taller practico JS</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Semana 11 | Taller practico</p>
+      <h1>Control de produccion semanal</h1>
+      <p>
+        Sistema web para practicar errores frecuentes en JavaScript,
+        depuracion sistematica y control de flujos.
+      </p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>Registro de produccion</h2>
+      <p class="muted">
+        Completa el formulario. El sistema debe validar los datos,
+        clasificar la produccion y agregar el registro a la tabla.
+      </p>
+
+      <form id="formProduccion" novalidate>
+        <div class="grid-form">
+          <label>
+            Responsable
+            <input id="responsable" name="responsable" type="text" placeholder="Ejemplo: Ana Perez" />
+          </label>
+
+          <label>
+            Producto
+            <select id="producto" name="producto">
+              <option value="">Seleccione...</option>
+              <option value="leche">Leche</option>
+              <option value="maiz">Maiz</option>
+              <option value="cafe">Cafe</option>
+              <option value="huevos">Huevos</option>
+            </select>
+          </label>
+
+          <label>
+            Cantidad
+            <input id="cantidad" name="cantidad" type="number" min="0" step="0.1" placeholder="Ejemplo: 25" />
+          </label>
+
+          <label>
+            Dia
+            <select id="dia" name="dia">
+              <option value="">Seleccione...</option>
+              <option value="lunes">Lunes</option>
+              <option value="martes">Martes</option>
+              <option value="miercoles">Miercoles</option>
+              <option value="jueves">Jueves</option>
+              <option value="viernes">Viernes</option>
+              <option value="sabado">Sabado</option>
+              <option value="domingo">Domingo</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Observaciones
+          <textarea id="observaciones" name="observaciones" rows="3" placeholder="Dato opcional para el registro"></textarea>
+        </label>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Registrar produccion</button>
+          <button class="btn" id="btnEjemplo" type="button">Cargar datos de ejemplo</button>
+          <button class="btn btn-danger" id="btnLimpiar" type="button">Limpiar registros</button>
+        </div>
+      </form>
+
+      <div id="mensajes" class="message" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h2>Resumen</h2>
+      <div class="summary-grid">
+        <article class="summary-item">
+          <span>Total registros</span>
+          <strong id="totalRegistros">0</strong>
+        </article>
+        <article class="summary-item">
+          <span>Total cantidad</span>
+          <strong id="totalCantidad">0</strong>
+        </article>
+        <article class="summary-item">
+          <span>Promedio</span>
+          <strong id="promedioCantidad">0</strong>
+        </article>
+      </div>
+      <p id="alertaResumen" class="muted">Aun no hay datos para analizar.</p>
+    </section>
+
+    <section class="card table-card">
+      <h2>Registros</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Responsable</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Dia</th>
+              <th>Nivel</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTabla">
+            <tr>
+              <td colspan="6" class="empty">Sin registros todavia.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card help-card">
+      <h2>Zona de depuracion</h2>
+      <p>
+        Abre la consola del navegador y observa los mensajes que aparecen al cargar,
+        registrar, cargar ejemplos y limpiar registros.
+      </p>
+      <ul>
+        <li>Revisa errores de referencia.</li>
+        <li>Revisa errores de tipo.</li>
+        <li>Revisa condiciones mal planteadas.</li>
+        <li>Revisa ciclos que recorren posiciones incorrectas.</li>
+      </ul>
+      <a class="link" href="tests.html">Abrir pagina de pruebas</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+INSTRUCCIONES DE ENTREGA
+
+1. Revisa que el proyecto corregido funcione.
+2. Completa los archivos de documentacion solicitados.
+3. Guarda tus capturas en la carpeta evidencias.
+4. Comprime la carpeta completa del proyecto.
+5. Nombre sugerido del ZIP:
+   Semana11_TallerPractico_ApellidoNombre.zip
+6. Sube el ZIP a Moodle en la tarea indicada por el docente.
