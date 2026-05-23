@@ -2,15 +2,15 @@
 
 ## Datos
 
-- Nombre:
+- Nombre: Santiago villada
 - Grupo:
-- Fecha:
-- Modalidad: individual / pareja
+- Fecha: 23-05-2026
+- Modalidad: individual
 
 ## Evidencia 1: VS Code
 
 Nombre del archivo de captura:
-
+Taller_practico_js_estudiante
 Descripcion:
 
 ## Evidencia 2: error en consola antes de corregir
@@ -31,9 +31,9 @@ Funcion o bloque corregido:
 
 Nombre del archivo de captura:
 
-Datos probados:
+Datos probados: lucia gonzales, maiz, 40, viernes, media
 
-Resultado observado:
+Resultado observado: total de registros: 1 total de cantidad: 40 promedio: 40.00
 
 ## Evidencia 5: pruebas aprobadas
 
@@ -46,3 +46,4 @@ Numero de pruebas aprobadas:
 Nombre del archivo de captura:
 
 Observaciones:
+El sistema funciona correctamente y tiene una interfaz ordenada y fácil de entender

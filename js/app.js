@@ -45,13 +45,13 @@ function validarRegistro(datos) {
   }
 
   // Pista tecnica: revisa si aqui se compara o se asigna.
-  if (datos.producto = "") {
+  if (datos.producto === "") {
     errores.push("Debe seleccionar un producto.");
   }
 
   // Pista tecnica: revisa el nombre del arreglo usado para almacenar errores.
   if (datos.cantidad <= 0) {
-    errors.push("La cantidad debe ser mayor que 0.");
+    errores.push("La cantidad debe ser mayor que 0.");
   }
 
   if (datos.dia === "") {
@@ -65,7 +65,7 @@ function clasificarCantidad(producto, cantidad) {
   const limite = UMBRALES_PRODUCTO[producto] || 0;
 
   // Pista tecnica: esta condicion altera el valor recibido.
-  if (cantidad = 0) {
+  if (cantidad === 0) {
     return "Sin dato";
   }
 
@@ -83,7 +83,7 @@ function obtenerDatosFormulario() {
     responsable: document.getElementById("responsable").value,
     producto: document.getElementById("producto").value,
     // Pista tecnica: los valores de input llegan como texto.
-    cantidad: document.getElementById("cantidad").value,
+    cantidad: Number(document.getElementById("cantidad").value),
     dia: document.getElementById("dia").value,
     observaciones: document.getElementById("observaciones").value
   };
@@ -104,7 +104,7 @@ function registrarProduccion(evento) {
   const errores = validarRegistro(datos);
 
   // Pista tecnica: revisa si esta condicion permite avanzar cuando no hay errores.
-  if (errores.length >= 0) {
+  if (errores.length > 0) {
     mostrarMensaje(errores.join(" "), "error");
     return;
   }
@@ -137,7 +137,7 @@ function renderTabla() {
   }
 
   // Pista tecnica: revisa el limite del ciclo.
-  for (let i = 0; i <= registros.length; i++) {
+  for (let i = 0; i < registros.length; i++) {
     const item = registros[i];
     const fila = document.createElement("tr");
 
@@ -155,11 +155,11 @@ function renderTabla() {
 }
 
 function calcularResumen(lista) {
-  let totalCantidad = "";
+  let totalCantidad = 0;
   const totalRegistros = lista.length;
 
   for (let i = 0; i < lista.length; i++) {
-    totalCantidad += lista[i].cantidad;
+    totalCantidad += Number(lista[i].cantidad);
   }
 
   const promedio = totalRegistros > 0 ? totalCantidad / totalRegistros : 0;
@@ -209,7 +209,7 @@ function cargarDatosEjemplo() {
 function limpiarTodo() {
   registros.length = 0;
   // Pista tecnica: revisa si el nombre de la funcion coincide con el que existe.
-  renderTable();
+  renderTabla();
   renderResumen();
   mostrarMensaje("Registros eliminados.", "ok");
 }
@@ -225,7 +225,7 @@ function inicializarEventos() {
 
   if (btnEjemplo) {
     // Pista tecnica: revisa si se entrega la funcion o si se ejecuta de inmediato.
-    btnEjemplo.addEventListener("click", cargarDatosEjemplo());
+    btnEjemplo.addEventListener("click", cargarDatosEjemplo);
   }
 
   if (btnLimpiar) {
